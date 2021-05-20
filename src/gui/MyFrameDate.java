@@ -10,6 +10,7 @@ import java.util.Random;
 
 public class MyFrameDate<listener2> extends JFrame {
     JLabel dateLabel, randomPickLabel, resultlable, JTextFieldt1;
+    JTextField t1 = new JTextField();
 
 
     public MyFrameDate() {

@@ -41,7 +41,6 @@ public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
         add(b3);
         resultlable = new JLabel("求平方根结果");
         add(resultlable);
-
         //添加监视器
         ActionListener listener1 = new ActionListener() {
             @Override//重写 有类与接口 在这是接口

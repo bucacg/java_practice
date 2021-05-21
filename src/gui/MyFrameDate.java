@@ -1,22 +1,19 @@
 package gui;
 
 import javax.swing.*;
-import javax.xml.crypto.Data;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 import java.util.Random;
 
-public class MyFrameDate<listener2> extends JFrame {
-    JLabel dateLabel, randomPickLabel, resultlable, JTextFieldt1;
-    JTextField t1 = new JTextField();
-
+public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
+    JLabel dateLabel, randomPickLabel, resultlable;
+    JTextField t1;
 
     public MyFrameDate() {
         this.setBounds(100, 100, 300, 300);
         this.setVisible(true);
-
     }
 
     public MyFrameDate(String s) {
@@ -31,16 +28,14 @@ public class MyFrameDate<listener2> extends JFrame {
         //设置对齐方式
         layout.setAlignment(FlowLayout.LEFT);
         JButton b1 = new JButton("显示时间");//创建按钮1
-        this.add(b1);
+        add(b1);
         dateLabel = new JLabel("点击显示当前时间");
         add(dateLabel);
-
-
         JButton b2 = new JButton("随机点名");
-        this.add(b2);
+        add(b2);
         randomPickLabel = new JLabel("点击显示当前学号");
         add(randomPickLabel);
-        JTextField t1 = new JTextField();
+        t1 = new JTextField();
         add(t1);
         JButton b3 = new JButton("求平方根");
         add(b3);

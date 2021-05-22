@@ -4,12 +4,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
 public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
     JLabel dateLabel, randomPickLabel, resultlable;
     JTextField t1;
+    calendarBeanLabel;
+
 
     public MyFrameDate() {
         this.setBounds(100, 100, 300, 300);
@@ -41,6 +44,11 @@ public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
         add(b3);
         resultlable = new JLabel("求平方根结果");
         add(resultlable);
+        JButton b4 = new JButton("显示当月日历");
+        add(b4);
+        calendarBeanLabel = new JLabel("点击显示当月日历");
+        add(calendarBeanLabel);
+
         //添加监视器
         ActionListener listener1 = new ActionListener() {
             @Override//重写 有类与接口 在这是接口
@@ -50,8 +58,6 @@ public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
             }
         };
         b1.addActionListener(listener1);
-
-
         ActionListener listener2 = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -66,6 +72,13 @@ public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
             }
         };
         b3.addActionListener(listener3);
+        ActionListener listener4 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CalendarBean();
+            }
+        };
+        b4.addActionListener(listener4);
     }
 
     public void showDate() {//不返回任何值也要加void,构造方法外
@@ -84,10 +97,60 @@ public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
             randomPickLabel.setText("2020811701" + i);
         }
     }
-        public void caculation () {
-            double d = Double.parseDouble(t1.getText());
-            double result = Math.sqrt(d);
-            resultlable.setText(String.valueOf(result));
 
+    public void caculation() {
+        double d = Double.parseDouble(t1.getText());
+        double result = Math.sqrt(d);
+        resultlable.setText(String.valueOf(result));
+
+    }
+
+    public class calendarBean {
+        int year = 0, month = 0;
+
+        public void setYear(int year)
+
+        {
+            this.year = year;
         }
+
+        public void setMonth(int month) {
+            this.month = month;
+        }
+
+        public String[] getCalendar() {
+            String[] a = new String[42];
+            Calendar rili = Calendar.getInstance();
+            rili.set(year, month - 1, 1);
+            int weekDay = rili.get(Calendar.DAY_OF_WEEK) - 1;//计算出1号的星期
+            int day = 0;
+            if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+                calendarLabelBean.setText("day = 31");
+            }
+            if (month == 4 || month == 6 || month == 9 || month == 11) ;
+            {
+                calendarLabelBean.setText("day = 30");
+            }
+            if (month == 2) {
+                if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) ;
+                {
+                    calendarLabelBean.setText("day = 29");
+                }
+            else
+                {
+                    calendarLabelBean.setText("day = 28");
+                }
+            }
+            for (int i = 0; i < weekDay + day; i++) ;
+            a[i] = " ";
+            for (int i = weekDay, n = 1; i < weekDay; i++) {
+                getCalendarLabelBean.setText("a[i] = String.valueOf(n)");
+                n++;
+            }
+            for (int i = weekDay + day; i < a.length; i++)
+                getCalendarLabelBean.setText("a[i] = "  "");
+            return a;
+        }
+
+    }
 }

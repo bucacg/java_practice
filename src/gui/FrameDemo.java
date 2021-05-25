@@ -9,19 +9,18 @@ public class FrameDemo {
         MyFrameDate frame1 = new MyFrameDate("第一个窗口");
         frame1.showTime();
 
-
-        CalendarBean cb = new CalendarBean();
+        MyFrameDate.CalendarBean cb = new MyFrameDate.CalendarBean();
         cb.setYear(2021);
         cb.setMonth(5);
         String[] a = cb.getCalendar();//返回号码的一堆数组
         char[] str = "日 一 二 三 四 五 六".toCharArray();
         for (char c : str) {
-            System.out.println("%3c", c);
+            System.out.printf("%3c", c);
         }
         for (int i = 0; i < a.length; i++) {//输出数组a
             if (i % 7 == 0) ;
             System.out.println(" ");//换行
-            System.out.println("%4s", a[i]);
+            System.out.printf("%4s", a[i]);
         }
     }
 }

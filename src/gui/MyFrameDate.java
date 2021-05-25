@@ -9,9 +9,9 @@ import java.util.Date;
 import java.util.Random;
 
 public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
-    JLabel dateLabel, randomPickLabel, resultlable;
+    JLabel dateLabel, randomPickLabel, resultlable,calendarBeanLabel;
     JTextField t1;
-    calendarBeanLabel;
+
 
 
     public MyFrameDate() {
@@ -75,7 +75,7 @@ public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
         ActionListener listener4 = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                CalendarBean();
+                new CalendarBean();
             }
         };
         b4.addActionListener(listener4);
@@ -105,7 +105,7 @@ public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
 
     }
 
-    public class calendarBean {
+    public static class CalendarBean {
         int year = 0, month = 0;
 
         public void setYear(int year)
@@ -117,6 +117,7 @@ public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
         public void setMonth(int month) {
             this.month = month;
         }
+        int i;
 
         public String[] getCalendar() {
             String[] a = new String[42];
@@ -124,6 +125,7 @@ public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
             rili.set(year, month - 1, 1);
             int weekDay = rili.get(Calendar.DAY_OF_WEEK) - 1;//计算出1号的星期
             int day = 0;
+            Label calendarLabelBean = null;
             if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
                 calendarLabelBean.setText("day = 31");
             }
@@ -132,23 +134,27 @@ public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
                 calendarLabelBean.setText("day = 30");
             }
             if (month == 2) {
-                if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) ;
-                {
+                if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))
+
                     calendarLabelBean.setText("day = 29");
-                }
             else
-                {
-                    calendarLabelBean.setText("day = 28");
+
+                        calendarLabelBean.setText("day = 28");
+
                 }
-            }
             for (int i = 0; i < weekDay + day; i++) ;
+
             a[i] = " ";
+            Label getCalendarLabelBean = null;
             for (int i = weekDay, n = 1; i < weekDay; i++) {
+
                 getCalendarLabelBean.setText("a[i] = String.valueOf(n)");
                 n++;
             }
-            for (int i = weekDay + day; i < a.length; i++)
-                getCalendarLabelBean.setText("a[i] = "  "");
+            for (int i = weekDay + day; i < a.length; i++) {
+                calendarLabelBean.setText("a[i] = \" \"");
+
+            }
             return a;
         }
 

@@ -74,7 +74,7 @@ public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
         ActionListener listener4 = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                 CalendarBean();
+                 new CalendarBean();
             }
         };
         b4.addActionListener(listener4);

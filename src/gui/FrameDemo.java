@@ -1,5 +1,7 @@
 package gui;
 
+import gui.sin.MyFrameSin;
+
 import java.util.Calendar;
 
 public class FrameDemo {
@@ -22,5 +24,8 @@ public class FrameDemo {
             System.out.println(" ");//换行
             System.out.printf("%4s", a[i]);
         }
+
+        MyFrameSin frameSin = new MyFrameSin("正弦函数");
+
     }
 }

@@ -9,8 +9,8 @@ public class FrameDemo {
     public static void main(String[] args) {
 
         //frame1.setLocation(100,100);//设置窗口位置
-        //MyFrameDate frame1 = new MyFrameDate("第一个窗口");
-        //frame1.showTime();
+        MyFrameDate frame1 = new MyFrameDate("第一个窗口");
+        frame1.showTime();
 
         //MyFrameDate.CalendarBean cb = new MyFrameDate.CalendarBean();
         //cb.setYear(2021);
@@ -26,8 +26,8 @@ public class FrameDemo {
             //System.out.printf("%4s", a[i]);
         //}
 
-        MyFrameSin frameSin = new MyFrameSin("正弦函数");
-        JSpinner GraphicPanel=new JSpinner();
+       // MyFrameSin frameSin = new MyFrameSin("正弦函数");
+        //JSpinner GraphicPanel=new JSpinner();
 
     }
 }

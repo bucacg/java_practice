@@ -74,7 +74,17 @@ public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
         ActionListener listener4 = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                 new CalendarBean();
+                CalendarBean calendarBean= new CalendarBean();
+                String result[]=calendarBean.getCalendar();
+                for(int i=0;i<result.length;i++){
+                    System.out.print(result[i]);
+
+                }
+                System.out.println("");
+                for(int i=0;i<result.length;i++){
+                    calendarBeanLabel.setText(result[i]);
+                }
+                //calendarBeanLabel.setText(result);
             }
         };
         b4.addActionListener(listener4);
@@ -111,7 +121,7 @@ public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
 
 
         int i;
-        int year = 0, month = 0;
+        int year = 0, month = 1;
 
 
         public void setYear(int year) {
@@ -131,11 +141,11 @@ public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
             if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
                 day=31;
             }
-            if (month == 4 || month == 6 || month == 9 || month == 11) ;
+            else if (month == 4 || month == 6 || month == 9 || month == 11)
             {
                 day = 30;
             }
-            if (month == 2) {
+            else if (month == 2) {
                 if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))
 
                     day = 29;
@@ -144,7 +154,7 @@ public class MyFrameDate<listener2, JTextFieldt1> extends JFrame {
                     day = 28;
 
             }
-            for (int i = 0; i < weekDay + day; i++) ;
+            for (int i = 0; i < weekDay + day; i++)
 
             a[i] = " ";
             for (int i = weekDay, n = 1; i < weekDay + day; i++) {
